@@ -13,6 +13,9 @@
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css"
+    integrity="sha256-aa0xaJgmK/X74WM224KMQeNQC2xYKwlAt08oZqjeF0E=" crossorigin="anonymous" />
+
   <!-- Custom styles for this template -->
   <link href="css/csmm.css" rel="stylesheet">
 
@@ -58,7 +61,8 @@
     <div class="container h-100">
       <div class="row h-100 align-items-center">
         <div class="col-lg-12">
-          <h1 class="display-4 text-white mt-5 mb-2">Catalysm 7 Days to Die Server Monitor & Manager Bot</h1>
+          <h1 class="display-4 text-white mt-5 mb-2"><strong>Catalysm 7 Days to Die Server Monitor & Manager
+              Bot</strong></h1>
         </div>
       </div>
     </div>
@@ -69,7 +73,7 @@
 
     <div class="row">
       <div class="col-md-12 mb-1">
-        <h6>CSMM gives admins unprecedented control over 7 Days to Die and insight into users' 7 Days to Die servers.
+        <h6>CSMM gives admins unprecedented control over 7 Days to Die and insight into users 7 Days to Die servers.
           Because CSMM for 7 Days to Die is highly customizable, you can make your server manager do what you want it to
           do. You can choose to host CSMM for 7 Days to Die on your own server or use one of the free public instances.
         </h6>
@@ -82,6 +86,10 @@
         <div id="stats" class="row justify-content-center invisible">
           <p>CSMM is used by <strong><span id="totalServers"></span></strong> servers with <strong> <span
                 id="totalPlayers"></span></strong> players. </p>
+
+          <!--           <div style="width:75%;">
+            <canvas id="canvas"></canvas>
+          </div> -->
         </div>
       </div>
     </div>
@@ -133,6 +141,10 @@
 
     <div class="row">
       <ul class="list-group">
+        <li class="list-group-item"><strong>Web panel</strong> - Control all settings via a web panel. Manage settings
+          and view server activity straight from your browser on any device</li>
+        <li class="list-group-item"><strong>New currency</strong> - Users can use the new currency for teleports, item
+          shop, and more!</li>
         <li class="list-group-item"><strong>Global ban list</strong> - get notified or act automatically when known
           cheaters/griefers
           join your server</li>
@@ -152,19 +164,23 @@
         <li class="list-group-item"> <strong>Ingame commands</strong> - Playermade teleports, ingame support system, ...
           Custom commands
           to expose console commands to players in a controlled way</li>
-        <li class="list-group-item"> <strong>Economy system</strong> - Let players earn money by playing, killing
-          zombies, typing on your
-          Discord server. They can spend their cash in your servers shop, teleports and more.</li>
-        <li class="list-group-item"> <strong>Discord integration</strong> - Chat bridge (chat between Discord and the
-          game), multiple
-          commands to view player info or view server status.</li>
+        <li class="list-group-item"> <strong>Economy system</strong> - Let players earn money by playing your 7 Days to
+          Die Server by killing zombies and typing on your Discord server. They can spend their cash in your servers
+          shop, teleports and more.</li>
+        <li class="list-group-item"> <strong>Discord integration</strong> - Chat bridge (chat between Discord and your 7
+          Days to Die Server), multiple commands to view player info or view server status.</li>
         <li class="list-group-item"> <strong>Support ticket system</strong> - Let players create support requests
           ingame. Admins can view
           and comment on these via the website to provide quick support for players.</li>
         <li class="list-group-item"> <strong>Server analytics</strong> - charts of # of online players, server FPS, RAM
           usage.</li>
-        <li class="list-group-item"> <strong>Custom hooks</strong> - React to events on your server with any command(s)
+        <li class="list-group-item"> <strong>Custom hooks</strong> - React to events (playerJoined, playerConnected,
+          playerDisconnected, chatMessage, playerKilled, playerDeath, playerSuicide, playerLevel, zombieKilled,
+          animalKilled or a custom search) on your server with any command(s)
           you want.
+        </li>
+        <li class="list-group-item"> <strong>Permissions and roles</strong> - Give users special permission on the
+          webpanel or ingame.
         </li>
       </ul>
     </div>
@@ -183,6 +199,8 @@
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
+    integrity="sha256-Uv9BNBucvCPipKQ2NS9wYpJmi8DTOEfTA/nH2aoJALw=" crossorigin="anonymous"></script>
   <script src="./js/index.js"></script>
 
 </body>
