@@ -26,6 +26,7 @@ $(document).ready(async () => {
     for (const key of Object.keys(historicalServers)) {
         historicalArray.push(historicalServers[key])
     }
+    historicalArray.splice(historicalArray.length - 1, 1)
 
 
     $('#totalServers').text(totalServers);
