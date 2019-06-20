@@ -15,11 +15,14 @@ $(document).ready(async () => {
 
             if (historicalServers[date.getUTCMonth() + "-" + date.getUTCDate()]) {
                 historicalServers[date.getUTCMonth() + "-" + date.getUTCDate()].servers = historicalServers[date.getUTCMonth() + "-" + date.getUTCDate()].servers + dataObj.servers;
+                historicalServers[date.getUTCMonth() + "-" + date.getUTCDate()].players = historicalServers[date.getUTCMonth() + "-" + date.getUTCDate()].players + dataObj.players;
             } else {
                 historicalServers[date.getUTCMonth() + "-" + date.getUTCDate()] = dataObj;
             }
         }
     }
+    const limitDate = new Date();
+    delete historicalServers[limitDate.getUTCMonth() + "-" + limitDate.getUTCDate()]
 
     const historicalArray = [];
 
@@ -74,6 +77,15 @@ function drawServerGraph(dataArray) {
                 borderColor: "rgb(54, 162, 235)",
                 data: dataArray.map(d => d.servers),
                 fill: false,
+                yAxisID: 'y-axis-1',
+            },
+            {
+                label: 'Players',
+                backgroundColor: "rgb(255, 159, 64)",
+                borderColor: "rgb(255, 159, 64)",
+                data: dataArray.map(d => d.players),
+                fill: false,
+                yAxisID: 'y-axis-2',
             }]
         },
         options: {
@@ -100,9 +112,21 @@ function drawServerGraph(dataArray) {
                 }],
                 yAxes: [{
                     display: true,
+                    type: 'linear',
+                    position: 'left',
+                    id: 'y-axis-1',
                     scaleLabel: {
                         display: true,
-                        labelString: 'Value'
+                        labelString: 'Servers'
+                    }
+                }, {
+                    display: true,
+                    type: 'linear',
+                    position: 'right',
+                    id: 'y-axis-2',
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Players'
                     }
                 }]
             }
