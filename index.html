@@ -1,241 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
+<head>
 
-        <meta charset="utf-8">
-        <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
-        <meta content="CSMM - a 7 days to die server manager" name="description">
-        <meta content="Catalysm" name="author">
-        <link href="/img/favicon.ico" rel="shortcut icon" type="image/png"/>
-        <title>CSMM</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta content="CSMM - a 7 days to die server manager" name="description">
+    <meta content="Catalysm" name="author">
+    <link href="/img/favicon.ico" rel="shortcut icon" type="image/png" />
+    <title>CSMM</title>
 
-        <!-- Bootstrap core CSS -->
-        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-        <link
-        crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" integrity="sha256-aa0xaJgmK/X74WM224KMQeNQC2xYKwlAt08oZqjeF0E=" rel="stylesheet"/>
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css"
+        integrity="sha256-aa0xaJgmK/X74WM224KMQeNQC2xYKwlAt08oZqjeF0E=" rel="stylesheet" />
 
-        <!-- Custom styles for this template -->
-        <link href="css/csmm.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/csmm.css" rel="stylesheet">
 
-    </head>
+</head>
 
-    <body>
+<body>
 
-        <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-            <div class="container">
-                <a class="navbar-brand" href="#">CSMM</a>
-                <button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarResponsive" data-toggle="collapse" type="button">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Home
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://confluence.catalysm.net" target="_blank">Documentation</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://github.com/CatalysmsServerManager/7-days-to-die-server-manager" target="_blank">Source
-                                              code</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="http://catalysm.net/discord" target="_blank">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://status.csmm.app" target="_blank">Status</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <!-- Header -->
-        <header class="bg-primary py-3 mb-3">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center">
-                    <div class="col-lg-12">
-                        <h1 class="display-4 text-white mt-5 mb-2">
-                            <strong>Catalysm 7 Days to Die Server Monitor & Manager
-                                              Bot</strong>
-                        </h1>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <!-- Page Content -->
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-
-            <div class="row">
-                <div class="col-md-12 mb-1">
-                    <h6>CSMM gives admins unprecedented control over 7 Days to Die and insight into users 7 Days to Die servers.
-                                  Because CSMM for 7 Days to Die is highly customizable, you can make your server manager do what you want it to
-                                  do. You can choose to host CSMM for 7 Days to Die on your own server or use one of the free public instances.
-                    </h6>
-                    <div class="row justify-content-center">
-                        <a class="btn btn-primary btn-lg" href="https://us.csmm.app">US &raquo;</a>
-                        <a class="btn btn-primary btn-lg" href="https://eu.csmm.app">EU &raquo;</a>
-                        <a class="btn btn-primary btn-lg" href="https://au.csmm.app">AU &raquo;</a>
-                    </div>
-
-                    <div class="row justify-content-center invisible" id="stats">
-                        <p>CSMM is used by
-                            <strong>
-                                <span id="totalServers"></span>
-                            </strong>
-                            servers with
-                            <strong>
-                                <span id="totalPlayers"></span>
-                            </strong>
-                            players.
-                        </p>
-                    </div>
-
-                    <div style="width:100%;">
-                        <canvas id="canvas"></canvas>
-                    </div>
-                </div>
-            </div>
-            <!-- /.row -->
-            <hr>
-
-            <h2>Features</h2>
-
-            <div class="row">
-                <div class="col-md-4 mb-5">
-                    <div class="card h-100">
-                        <img alt="" class="card-img-top" src="img/playertracking.png">
-                        <div class="card-body">
-                            <h4 class="card-title">Player tracking</h4>
-                            <p class="card-text">Catch cheaters and raiders like never before with CSMMs built-in tracking. Search for
-                                              player, location and/or timeframe to find the data you need.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-5">
-                    <div class="card h-100">
-                        <img alt="" class="card-img-top" src="img/ingame.png">
-                        <div class="card-body">
-                            <h4 class="card-title">Ingame features</h4>
-                            <p class="card-text">Economy, teleports, custom commands, support tickets, server automation, ... CSMM has
-                                              lots of ingame features to take advantage of.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-5">
-                    <div class="card h-100">
-                        <img alt="" class="card-img-top" src="img/discord.png">
-                        <div class="card-body">
-                            <h4 class="card-title">Discord bot</h4>
-                            <p class="card-text">CSMM comes with a powerful Discord bot that lets you execute server commands from
-                                              Discord, create a chatbridge between your game and a Discord channel and send notifications.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /.row -->
-
-            <div class="row">
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <strong>Web panel</strong>
-                        - Control all settings via a web panel. Manage settings
-                                  and view server activity straight from your browser on any device</li>
-                    <li class="list-group-item">
-                        <strong>New currency</strong>
-                        - Users can use the new currency for teleports, item
-                                  shop, and more!</li>
-                    <li class="list-group-item">
-                        <strong>Global ban list</strong>
-                        - get notified or act automatically when known
-                                  cheaters/griefers
-                                  join your server</li>
-                    <li class="list-group-item">
-                        <strong>Server automation</strong>
-                        - run any command in any time interval you want.
-                                  Timed server
-                                  messages, automatic world saving, ...</li>
-                    <li class="list-group-item">
-                        <strong>Discord notifications</strong>
-                        - built-in for common use cases. Ability to
-                                  detect specific
-                                  strings for your custom purposes</li>
-                    <li class="list-group-item">
-                        <strong>High ping kicker</strong>
-                        - Kick players with constant bad connection.</li>
-                    <li class="list-group-item">
-                        <strong>Country ban</strong>
-                        - automatically kick or ban players from certain
-                                  countries from your
-                                  server.</li>
-                    <li class="list-group-item">
-                        <strong>Player tracking</strong>
-                        - Track location and inventory of online players
-                                  and view them on a
-                                  map of your server.</li>
-                    <li class="list-group-item">
-                        <strong>Ingame commands</strong>
-                        - Playermade teleports, ingame support system, ...
-                                  Custom commands
-                                  to expose console commands to players in a controlled way</li>
-                    <li class="list-group-item">
-                        <strong>Economy system</strong>
-                        - Let players earn money by playing your 7 Days to
-                                  Die Server by killing zombies and typing on your Discord server. They can spend their cash in your servers
-                                  shop, teleports and more.</li>
-                    <li class="list-group-item">
-                        <strong>Discord integration</strong>
-                        - Chat bridge (chat between Discord and your 7
-                                  Days to Die Server), multiple commands to view player info or view server status.</li>
-                    <li class="list-group-item">
-                        <strong>Support ticket system</strong>
-                        - Let players create support requests
-                                  ingame. Admins can view
-                                  and comment on these via the website to provide quick support for players.</li>
-                    <li class="list-group-item">
-                        <strong>Server analytics</strong>
-                        - charts of # of online players, server FPS, RAM
-                                  usage.</li>
-                    <li class="list-group-item">
-                        <strong>Custom hooks</strong>
-                        - React to events (playerJoined, playerConnected,
-                                  playerDisconnected, chatMessage, playerKilled, playerDeath, playerSuicide, playerLevel, zombieKilled,
-                                  animalKilled or a custom search) on your server with any command(s)
-                                  you want.
+            <a class="navbar-brand" href="#">CSMM</a>
+            <button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler" data-target="#navbarResponsive" data-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home
+                        </a>
                     </li>
-                    <li class="list-group-item">
-                        <strong>Permissions and roles</strong>
-                        - Give users special permission on the
-                                  webpanel or ingame.
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://docs.csmm.app" target="_blank">Documentation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"
+                            href="https://github.com/CatalysmsServerManager/7-days-to-die-server-manager"
+                            target="_blank">Source
+                            code</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://catalysm.net/discord" target="_blank">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://status.csmm.app" target="_blank">Status</a>
                     </li>
                 </ul>
             </div>
+        </div>
+    </nav>
 
-            <hr>
+    <!-- Header -->
+    <header class="bg-primary py-3 mb-3">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-lg-12">
+                    <h1 class="display-4 text-white mt-5 mb-2">
+                        <strong>Catalysm 7 Days to Die Server Monitor & Manager
+                            Bot</strong>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12 mb-1">
+                <h6>CSMM gives admins unprecedented control over 7 Days to Die and insight into users 7 Days to Die
+                    servers.
+                    Because CSMM for 7 Days to Die is highly customizable, you can make your server manager do what you
+                    want it to
+                    do. You can choose to host CSMM for 7 Days to Die on your own server or use one of the free public
+                    instances.
+                </h6>
+                <div class="row justify-content-center">
+                    <a class="btn btn-primary btn-lg" href="https://us.csmm.app">US &raquo;</a>
+                    <a class="btn btn-primary btn-lg" href="https://eu.csmm.app">EU &raquo;</a>
+                    <a class="btn btn-primary btn-lg" href="https://au.csmm.app">AU &raquo;</a>
+                </div>
+
+                <div class="row justify-content-center invisible" id="stats">
+                    <p>CSMM is used by
+                        <strong>
+                            <span id="totalServers"></span>
+                        </strong>
+                        servers with
+                        <strong>
+                            <span id="totalPlayers"></span>
+                        </strong>
+                        players.
+                    </p>
+                </div>
+
+                <div style="width:100%;">
+                    <canvas id="canvas"></canvas>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+        <hr>
+
+        <h2>Features</h2>
+
+        <div class="row">
+            <div class="col-md-4 mb-5">
+                <div class="card h-100">
+                    <img alt="" class="card-img-top" src="img/playertracking.png">
+                    <div class="card-body">
+                        <h4 class="card-title">Player tracking</h4>
+                        <p class="card-text">Catch cheaters and raiders like never before with CSMMs built-in tracking.
+                            Search for
+                            player, location and/or timeframe to find the data you need.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-5">
+                <div class="card h-100">
+                    <img alt="" class="card-img-top" src="img/ingame.png">
+                    <div class="card-body">
+                        <h4 class="card-title">Ingame features</h4>
+                        <p class="card-text">Economy, teleports, custom commands, support tickets, server automation,
+                            ... CSMM has
+                            lots of ingame features to take advantage of.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-5">
+                <div class="card h-100">
+                    <img alt="" class="card-img-top" src="img/discord.png">
+                    <div class="card-body">
+                        <h4 class="card-title">Discord bot</h4>
+                        <p class="card-text">CSMM comes with a powerful Discord bot that lets you execute server
+                            commands from
+                            Discord, create a chatbridge between your game and a Discord channel and send notifications.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>Web panel</strong>
+                    - Control all settings via a web panel. Manage settings
+                    and view server activity straight from your browser on any device</li>
+                <li class="list-group-item">
+                    <strong>New currency</strong>
+                    - Users can use the new currency for teleports, item
+                    shop, and more!</li>
+                <li class="list-group-item">
+                    <strong>Global ban list</strong>
+                    - get notified or act automatically when known
+                    cheaters/griefers
+                    join your server</li>
+                <li class="list-group-item">
+                    <strong>Server automation</strong>
+                    - run any command in any time interval you want.
+                    Timed server
+                    messages, automatic world saving, ...</li>
+                <li class="list-group-item">
+                    <strong>Discord notifications</strong>
+                    - built-in for common use cases. Ability to
+                    detect specific
+                    strings for your custom purposes</li>
+                <li class="list-group-item">
+                    <strong>High ping kicker</strong>
+                    - Kick players with constant bad connection.</li>
+                <li class="list-group-item">
+                    <strong>Country ban</strong>
+                    - automatically kick or ban players from certain
+                    countries from your
+                    server.</li>
+                <li class="list-group-item">
+                    <strong>Player tracking</strong>
+                    - Track location and inventory of online players
+                    and view them on a
+                    map of your server.</li>
+                <li class="list-group-item">
+                    <strong>Ingame commands</strong>
+                    - Playermade teleports, ingame support system, ...
+                    Custom commands
+                    to expose console commands to players in a controlled way</li>
+                <li class="list-group-item">
+                    <strong>Economy system</strong>
+                    - Let players earn money by playing your 7 Days to
+                    Die Server by killing zombies and typing on your Discord server. They can spend their cash in your
+                    servers
+                    shop, teleports and more.</li>
+                <li class="list-group-item">
+                    <strong>Discord integration</strong>
+                    - Chat bridge (chat between Discord and your 7
+                    Days to Die Server), multiple commands to view player info or view server status.</li>
+                <li class="list-group-item">
+                    <strong>Support ticket system</strong>
+                    - Let players create support requests
+                    ingame. Admins can view
+                    and comment on these via the website to provide quick support for players.</li>
+                <li class="list-group-item">
+                    <strong>Server analytics</strong>
+                    - charts of # of online players, server FPS, RAM
+                    usage.</li>
+                <li class="list-group-item">
+                    <strong>Custom hooks</strong>
+                    - React to events (playerJoined, playerConnected,
+                    playerDisconnected, chatMessage, playerKilled, playerDeath, playerSuicide, playerLevel,
+                    zombieKilled,
+                    animalKilled or a custom search) on your server with any command(s)
+                    you want.
+                </li>
+                <li class="list-group-item">
+                    <strong>Permissions and roles</strong>
+                    - Give users special permission on the
+                    webpanel or ingame.
+                </li>
+            </ul>
+        </div>
+
+        <hr>
 
 
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; CSMM 2019</p>
         </div>
         <!-- /.container -->
+    </footer>
 
-        <!-- Footer -->
-        <footer class="py-5 bg-dark">
-            <div class="container">
-                <p class="m-0 text-center text-white">Copyright &copy; CSMM 2019</p>
-            </div>
-            <!-- /.container -->
-        </footer>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Uv9BNBucvCPipKQ2NS9wYpJmi8DTOEfTA/nH2aoJALw="
+        src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <script src="./js/index.js"></script>
 
-        <!-- Bootstrap core JavaScript -->
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Uv9BNBucvCPipKQ2NS9wYpJmi8DTOEfTA/nH2aoJALw=" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
-        <script src="./js/index.js"></script>
-
-    </body>
+</body>
 
 </html>
